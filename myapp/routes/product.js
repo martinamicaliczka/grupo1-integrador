@@ -3,5 +3,5 @@ var router = express.Router();
 const productController = require('../controllers/productController')
 
 /* GET users listing. */
-router.get('/search-results/:search', productController.results);
+router.get('/search-results', productController.results);
 module.exports = router;
