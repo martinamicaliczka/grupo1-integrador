@@ -4,6 +4,9 @@ const userController = {
     },
     register: function (req, res) {
         return res.render('register')
+    },
+    profile: function (req, res) {
+        return res.render('profile')
     }
 };
 
