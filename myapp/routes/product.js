@@ -5,6 +5,7 @@ const productController = require('../controllers/productController')
 
 /* GET users listing. */
 router.get('/search-results', productController.results);
-router.get('/', productController.agregarProductos);
-router.get('/agregar-producto', productController.paginaAgregar);
+router.get('id/:idBuscado', productController.product);
+router.get('/product-addo', productController.agregarProductos);
+router.get('/page-add', productController.paginaAgregar)
 module.exports = router;
