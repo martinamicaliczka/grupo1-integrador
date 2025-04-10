@@ -12,8 +12,7 @@
   --green: #39b54a;
   --base-font-family: 'Roboto', sans-serif;
   --detalles: #155383
-}
-
+};
 
 /*====== Basics ======*/
 * {
@@ -106,7 +105,7 @@ hr {
   background-color: #ffffff;
   border: none;
   border-left: solid 1px var(--light-gray);
-  color: var(--gray);
+  color: var(--detalles);
   cursor: pointer;
 }
 
