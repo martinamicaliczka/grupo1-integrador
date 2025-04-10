@@ -10,12 +10,7 @@ const usuarios = [
       fotoPerfil: "/images/users/foto.png"
     }
   ];
-  const logIn = {
-    login: false,
-    usuarioLog: null,
-  };
+  
 
-module.exports = {
-    usuarios, 
-    logIn};
+module.exports = usuarios;
 

@@ -1,8 +1,6 @@
 const indexController = {
    index: function (req, res) {
-      return res.render('index', {
-         usuarios: db.usuarios,
-      })
+      return res.render('index')
    },
    register: function(req,res){
       return res.render('index')
