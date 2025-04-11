@@ -1,6 +1,7 @@
 //modulo de datos// 
 //preguntar si es un usuario o se ponen todos//
-const usuarios = [
+const dataebase ={
+    usuarios: [
     {
       email: "brian@digitalhouse.com",
       usuario: "brian",
@@ -9,8 +10,13 @@ const usuarios = [
       nroDocumento: "46956088",
       fotoPerfil: "/images/users/foto.png"
     }
-  ];
-  
+  ],
+  productos: [
+    {
+        nombre: "hola"
+    }
+]
+};
 
-module.exports = usuarios;
+module.exports = dataebase;
 
