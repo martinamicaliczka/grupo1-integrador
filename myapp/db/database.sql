@@ -168,3 +168,276 @@ NULL,
 NULL,
 1
 );
+CREATE TABLE comentarios (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id_producto INT UNSIGNED NOT NULL,
+    id_usuario INT UNSIGNED NOT NULL,
+    comentario TEXT NOT NULL,
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    deletedAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_producto) REFERENCES productos(id),
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+);
+INSERT INTO comentarios VALUES(
+DEFAULT,
+1,
+1,
+'¡La funda es hermosa! Me encantó.',
+NULL,
+NULL,
+NULL
+),
+(
+DEFAULT,
+1,
+2,
+'Me gustó, aunque esperaba otro material.',
+NULL,
+NULL,
+NULL
+), 
+(
+DEFAULT,
+1,
+3,
+'Llegó rápido y en buen estado.',
+NULL,
+NULL,
+NULL
+),
+
+(
+DEFAULT,
+2,
+4,
+'Colores hermosos, muy buena calidad.',
+NULL,
+NULL,
+NULL
+),
+(
+DEFAULT,
+2,
+5,
+'Es tal cual la foto, ¡recomiendo!',
+NULL,
+NULL,
+NULL
+),
+(
+DEFAULT,
+2,
+1,
+'Un poco fina, pero linda igual.',
+NULL,
+NULL,
+NULL
+),
+
+(
+DEFAULT,
+3,
+2,
+'Muy elegante.',
+NULL,
+NULL,
+NULL
+),
+(
+DEFAULT,
+3,
+3,
+'La textura es muy suave.',
+NULL,
+NULL,
+NULL
+),
+(
+DEFAULT,
+3,
+4,
+'Mi funda favorita hasta ahora.',
+NULL,
+NULL,
+NULL
+),
+
+(
+DEFAULT,
+4,
+5,
+'Me encanta el brillo y el espejo.',
+NULL,
+NULL,
+NULL
+),
+(
+DEFAULT,
+4,
+1,
+'Ideal para selfies con el espejo.',
+NULL,
+NULL,
+NULL
+),
+(
+DEFAULT,
+4,
+2,
+'Un diseño muy original.',
+NULL,
+NULL,
+NULL
+),
+
+(
+DEFAULT,
+5,
+2,
+'Un diseño muy original.',
+NULL,
+NULL,
+NULL
+),
+(
+DEFAULT,
+5, 
+3, 
+'El glitter no se cae, excelente.', 
+NULL,
+NULL,
+NULL),
+(
+DEFAULT,
+5, 
+5, 
+'Muy bonita y delicada.', 
+NULL,
+NULL,
+NULL),
+
+(
+DEFAULT,
+6, 
+1, 
+'Perfecta para la noche, mágica.', 
+NULL,
+NULL,
+NULL),
+(
+DEFAULT,
+6, 
+2, 
+'Muy original, todos me preguntan dónde la compré.', 
+NULL,
+NULL,
+NULL),
+(
+DEFAULT,
+6, 
+3, 
+'¡10 puntos! No decepciona.',
+NULL,
+NULL,
+NULL),
+
+(
+DEFAULT,
+7, 
+4, 
+'Me fascina el diseño con estrellas.', 
+NULL,
+NULL,
+NULL),
+(
+DEFAULT,
+7, 
+5, 
+'Es más linda en persona.', 
+NULL,
+NULL,
+NULL),
+(
+DEFAULT,
+7, 
+1, 
+'Muy recomendada.',
+NULL,
+NULL,
+NULL),
+
+(
+DEFAULT,
+8, 
+2, 
+'Las mariposas se ven muy reales.', 
+NULL,
+NULL,
+NULL),
+(
+DEFAULT,
+8, 
+3, 
+'Hermoso diseño, parece de arte.', 
+NULL,
+NULL,
+NULL),
+(
+DEFAULT,
+8, 
+4, 
+'Muy delicada, me encanta.', 
+NULL,
+NULL,
+NULL),
+
+(
+DEFAULT,
+9, 
+5, 
+'Estilo urbano, justo lo que buscaba.', 
+NULL,
+NULL,
+NULL),
+(
+DEFAULT,
+9, 
+1, 
+'Muy original y distinta.',
+NULL,
+NULL,
+NULL),
+(
+DEFAULT,
+9, 
+2, 
+'Me re gustó, ¡gracias!', 
+NULL,
+NULL,
+NULL),
+
+(
+DEFAULT,
+10, 
+3, 
+'Diseño moderno, me encantó.', 
+NULL,
+NULL,
+NULL),
+(
+DEFAULT,
+10, 
+4, 
+'Los corazones son un toque genial.', 
+NULL,
+NULL,
+NULL),
+(
+DEFAULT,
+10, 
+5, 
+'Perfecta para regalar.',
+NULL,
+NULL,
+NULL);
