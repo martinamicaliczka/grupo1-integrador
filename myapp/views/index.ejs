@@ -15,7 +15,12 @@
 		<link rel="stylesheet" href="/stylesheets/app.css">
 </head>
 <body>
-	<%- include('./partials/header') %>
+	<% if (estalogeado) { %>
+		<%- include('./partials/headerLogueado') %>
+	  <% } else { %>
+		<%- include('./partials/header') %>
+	  <% } %>
+	 
 	
 	<!-- Banner -->
 	<div class="banner">
