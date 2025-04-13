@@ -1,3 +1,5 @@
+const data = require('../db/db'); 
+const usuarios = data.usuarios;
 const productController = {
    product: function (req, res) {
       let idBuscado = req.params.brtand;
@@ -11,7 +13,8 @@ const productController = {
     },
 
     agregarProductos: function(req,res){
-      return res.render('product-add')
+      const usuarioLogeado = usuarios.usuario;
+      return res.render('product-add', {usuarioLogeado});
     }
  };
  
