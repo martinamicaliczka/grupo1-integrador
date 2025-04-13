@@ -1,18 +1,15 @@
 const indexController = {
    index: function (req, res) {
-      const estalogeado = false; 
-      return res.render('index', {estalogeado})
+      return res.render('index', {estalogeado: false})
    },
    register: function(req,res){
       return res.render('index')
    }, 
    login: function(req,res){
-      const estalogeado = true;
-      return res.render('index', {estalogeado});
+      return res.render('index');
    }, 
    logout: function(req, res){
-      const estalogeado = false;
-      return res.render('index', {estalogeado});
+      return res.render('index', {estalogeado: false});
    }
 };
  

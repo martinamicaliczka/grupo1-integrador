@@ -13,70 +13,70 @@ const dataebase ={
  productos: [
     {
       id: 1,
-      imagenProducto: "img-funda1.jpg",
+      imagenProducto: "/images/products/img-funda1.jpg",
       nombre: "Funda Arcoiris",
       descripcion: "Funda de silicona arcoiris, flexible y suave al tacto. Ofrece una excelente protección contra golpes y rayones, mientras le da a tu dispositivo un look moderno y divertido.",
       usuario_id: 1
     },
     {
       id: 2,
-      imagenProducto: "img-funda2.jpg",
+      imagenProducto: "/images/products/img-funda2.jpg",
       nombre: "Funda Aurora Pastel",
       descripcion: "Elegante funda de silicona con acabado mate y diseño degradado en tonos pastel. Suave al tacto, flexible y resistente, ideal para proteger tu celular con estilo y personalidad.",
       usuario_id: 3
     },
     {
       id: 3,
-      imagenProducto: "img-funda3.jpg",
+      imagenProducto: "/images/products/img-funda3.jpg",
       nombre: "Funda Mármol Rosado Luxe",
       descripcion: "Diseño de mármol rosado con brillos. Elegante, flexible y suave al tacto.",
       usuario_id: 5
     },
     {
       id: 4,
-      imagenProducto: "img-funda4.jpg",
+      imagenProducto: "/images/products/img-funda4.jpg",
       nombre: "Funda Glam Rosa Mirror",
       descripcion: "Funda con glitter rosa y espejo. Moderna, llamativa y súper elegante.",
       usuario_id: 2
     },
     {
       id: 5,
-      imagenProducto: "img-funda5.jpg",
+      imagenProducto: "/images/products/img-funda5.jpg",
       nombre: "Funda Glitter Crystal",
       descripcion: "Funda transparente con glitter holográfico. Divertida, brillante y delicada.",
       usuario_id: 4
     },
     {
       id: 6,
-      imagenProducto: "img-funda6.jpg",
+      imagenProducto: "/images/products/img-funda6.jpg",
       nombre: "Funda Estelar Glitter",
       descripcion: "Funda negra con estrellas brillantes. Original, mágica y súper llamativa.",
       usuario_id: 1
     },
     {
       id: 7,
-      imagenProducto: "img-funda7.jpg",
+      imagenProducto: "/images/products/img-funda7.jpg",
       nombre: "Funda Green Sparkle",
       descripcion: "Funda verde con estrellas brillantes y mucho glitter!. Original, mágica y súper llamativa.",
       usuario_id: 5
     },
     {
       id: 8,
-      imagenProducto: "img-funda8.jpg",
+      imagenProducto: "/images/products/img-funda8.jpg",
       nombre: "Funda Butterfly Dream",
       descripcion: "Funda transparente con mariposas violetas. Delicada, fresca y encantadora.",
       usuario_id: 3
     },
     {
       id: 9,
-      imagenProducto: "img-funda9.jpg",
+      imagenProducto: "/images/products/img-funda9.jpg",
       nombre: "Funda Street-Style",
       descripcion: "Funda transparente con un collage de tickets y distintos simbolos. Delicada, cool y unica.",
       usuario_id: 2
     },
     {
       id: 10,
-      imagenProducto: "img-funda10.jpg",
+      imagenProducto: "/images/products/img-funda10.jpg",
       nombre: "Funda Love Contrast",
       descripcion: "Funda con corazones rosas y negros. Divertida, moderna y con estilo único.",
       usuario_id: 1

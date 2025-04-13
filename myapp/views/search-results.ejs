@@ -27,13 +27,12 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
-				<div class="container">
-					<% resultados.forEach(producto => { %>
-					  <div class="product-box">
-						<h2><%= producto.nombre %></h2>
-						<p><%= producto.descripcion %></p>
+				<div>
+					  <div>
+						<h2><%= nombreProducto %></h2>
+						<p><%= descripcionProducto %></p>
+						<img src="<%= imgProducto %>" alt="fotoDelproducto">
 					  </div>
-					<%})%>
 				</div>
 			</h2>
 
