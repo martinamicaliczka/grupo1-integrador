@@ -6,7 +6,7 @@ const productController = {
       return res.send('product', {id:idBuscado})
    },
    homeProduct: function(req,res){
-      return res.render('product', {productos: db.productos})
+      return res.render('product', {productos: data.productos})
    },
     results: function (req, res) {
        return res.render('search-results')
