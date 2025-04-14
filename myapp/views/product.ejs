@@ -18,23 +18,39 @@
 	<%- include('./partials/header') %>
 	
 	<!-- product detail -->
-	<div class="container products-wrapper">
-		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= nombreProducto %></h2> 
-			<p class="product-detail-description">
-				<a href="/product/product-add">Editar</a>
-			</p>
+
+	<% for (let i = 0; i < productos.length; i++) { 
+		let producto = productos[i]; 
+		let descripcion = producto.descripcion;
+		let nombre = producto.nombre;
+		let id = producto.id;
+		let imagen = producto.imagenProducto;
+	
+		if (id == idBuscado) { %>
+			<div class="container products-wrapper">
+				<div class="d-flex align-items-center">
+					<h2 class="products-title"><%= nombre %></h2> 
+					<p class="product-detail-description">
+						<a href="/product/product-add">Editar</a>
+					</p>
+				</div>
+				<div class="product-detail">
+					<div class="row">
+						<article class="col-12 col-lg-8 product-detail-info">
+							<img src="<%= imagen %>" alt="<%= nombre %>" class="product-detail-img">
+							<p class="product-detail-description"><%= descripcion %></p>
+						</article>
+					</div> 
+				</div>
+			</div>
+		<% } 
+	} %>
+	
 		</div>
-		<div class="product-detail">
-			<div class="row">
-				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= imgProducto %>" alt="imagen-producto" class="product-detail-img">
-					<p class="product-detail-description"><%=descripcionProducto%></p>
-				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						<article>
-							<img src="/images/users/foto.png" alt="">
+							<img src="" alt="">
 							<div class="data">
 								<p class="user">
 								<strong> <a href="/users/profile">Brian</a> </strong>
@@ -65,7 +81,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- /product detail -->
+	
 
 	<%- include('./partials/footer') %>
 

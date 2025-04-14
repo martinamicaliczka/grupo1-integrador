@@ -35,15 +35,11 @@
 			<% for (let i = 0; i < 3; i++) { 
 				let producto = productos[i];
 				let descripcion = producto.descripcion;
-				let descripcionAcortada = descripcion.slice(0, 50) + "...";
-			  
-				// Contar comentarios
-				let coments = 0;
-				for (let j = 0; j < comentarios.length; j++) {
-				  if (comentarios[j].id_producto === producto.id) {
-					coments++;
-				  }
+				let descripcionAcortada = "";
+				for (let j = 0; j < 50 && j < descripcion.length; j++) {
+				  descripcionAcortada += descripcion[j];
 				}
+				descripcionAcortada += "...";
 			  %>
 				<div class="col-12 col-sm-6 col-lg-3">
 				  <section class="product-box">
@@ -54,6 +50,13 @@
 					  <article class="product-box_data">
 						<h2><%= producto.nombre %></h2>
 						<p><%= descripcionAcortada %></p>
+		  
+						<% let coments = 0; %>
+						<% for (let j = 0; j < comentarios.length; j++) { %>
+						  <% if (comentarios[j].id_producto == producto.id) { %>
+							<% coments += 1; %>
+						  <% } %>
+						<% } %>
 						<p>Comentarios: <%= coments %></p>
 					  </article>
 					</a>

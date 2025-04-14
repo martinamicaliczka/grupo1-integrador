@@ -5,7 +5,7 @@ const comentarios = data.comentarios;
 
 const productController = {
    product: function (req, res) {
-      const idBuscado = req.params.brand 
+      const idBuscado = req.params.id;
       return res.render('product', {productos:productos, comentarios:comentarios, idBuscado: idBuscado})
    },
    homeProduct: function(req,res){

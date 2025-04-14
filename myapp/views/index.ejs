@@ -33,34 +33,37 @@
 				<h2 class="products-title">Productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-					<% for (let i = 0; i < productos.length; i++) { 
-						let producto = productos[i];
-						let descripcion = producto.descripcion;
-						let descripcionAcortada = descripcion.slice(0, 50) + "...";
-					 
-						// Contar comentarios
-						let coments = 0;
-						for (let j = 0; j < comentarios.length; j++) {
-						   if (comentarios[j].id_producto === producto.id) {
-							  coments++;
-						   }
-						}
-					 %>
-					 <div class="col-12 col-sm-6 col-lg-3">
-					 <section class="product-box">
-					   <a href="/product/<%= producto.id %>">
-						 <figure class="product-box_image">
-						   <img src="<%= producto.imagenProducto %>" alt="<%= producto.nombre %>">
-						 </figure>
-						 <article class="product-box_data">
-						   <h2><%= producto.nombre %></h2>
-						   <p><%= descripcionAcortada %></p>
-						   <p>Comentarios: <%= coments %></p>
-						 </article>
-					   </a>
-					   </section>
-					</div>
-					 <% } %>
+			<% for (let i = 0; i < productos.length; i++) { 
+				let producto = productos[i];
+				let descripcion = producto.descripcion;
+				let descripcionAcortada = "";
+				for (let j = 0; j < 50 && j < descripcion.length; j++) {
+				  descripcionAcortada += descripcion[j];
+				}
+				descripcionAcortada += "...";
+			  %>
+				<div class="col-12 col-sm-6 col-lg-3">
+				  <section class="product-box">
+					<a href="/product/<%= producto.id %>">
+					  <figure class="product-box_image">
+						<img src="<%= producto.imagenProducto %>" alt="<%= producto.nombre %>">
+					  </figure>
+					  <article class="product-box_data">
+						<h2><%= producto.nombre %></h2>
+						<p><%= descripcionAcortada %></p>
+		  
+						<% let coments = 0; %>
+						<% for (let j = 0; j < comentarios.length; j++) { %>
+						  <% if (comentarios[j].id_producto == producto.id) { %>
+							<% coments += 1; %>
+						  <% } %>
+						<% } %>
+						<p>Comentarios: <%= coments %></p>
+					  </article>
+					</a>
+				  </section>
+				</div>
+			  <% } %>
 		</div>
 	</div>
 
