@@ -246,6 +246,10 @@ hr {
     font-size: 14px;
     font-weight: 400;
 }
+.product-label{
+  margin-bottom: 20px;
+  font-weight: 400;
+}
 .recordame{
   margin-bottom: 5px;
     font-size: 14px;
@@ -274,6 +278,12 @@ hr {
     margin: 20px 0;
     font-weight: bold;
 }
+.productsadd-title{
+  font-size: 24px;
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold;
+}
 .formulario-login{
   max-width: 500px;
     background-color: #ffffff;
@@ -297,6 +307,17 @@ hr {
 .checkboxdiv .form-label {
   font-size: 12px;
   margin-left: 8px;
+}
+/*agregar-productos*/
+
+.productos_img {
+  display: inline-block;
+  width: 100%;
+  padding:10px;
+  font-size: 15px;
+  border: 1px solid var(--dark-blue);
+  border-radius: 5px;
+  background-color:  var(--azul);
 }
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
@@ -354,6 +375,12 @@ hr {
     margin-top: 30px;
     margin-bottom: 30px;
   }
+  .productsadd-title{
+    text-align: center;
+    font-size:28px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
   .formulario-registro{
     width:60%;
     margin:0 auto;
@@ -367,7 +394,17 @@ hr {
     font-size: 18px;
     margin-bottom: 5px;
   }
+  .product-label{
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
   .form-input{
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 4px;
+  }
+  .productos_img{
     font-size: 16px;
     padding: 10px;
     border: 1px solid;

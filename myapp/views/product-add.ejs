@@ -13,7 +13,7 @@
 	<!-- Bootstrap Grid Stylesheet -->
 	<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
 	<!-- Own Stylesheet -->
-	<link rel="stylesheet" href="/stylesheets/app.css">
+	<link rel="stylesheet" href="/stylesheets/register.css">
 </head>
 
 <body>
@@ -23,26 +23,26 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Agregar productos</h2>
+				<h2 class="productsadd-title">Agregar Productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> 
-				<form action="/product" method="get">
+			<h2 class="col-12"> </h2>
+				<form action="/product" method="get" class="formulario-registro">
 					<div>
-						<label for="imagen">Imagen:</label>
-						<input type="file" name="image" id="image">
+						<label for="nombre-producto" class="product-label">Nombre del producto:</label>
+						<input type="text" name="nombre-producto" id="nombre-producto" class="form-input">
 					</div>
 					<div>
-						<label for="nombre-producto">Nombre del producto:</label>
-						<input type="text" name="nombre-producto" id="nombre-producto">
+						<label for="descripcion" class="product-label">Descripcion del producto:</label>
+						<input type="text" name="descripcion" id="descripcion" class="form-input">
 					</div>
 					<div>
-						<label for="descripcion">Descripcion del producto:</label>
-						<input type="text" name="descripcion" id="descripcion">
+						<label for="imagen" class="product-label">Seleccionar imagen</label>
+						<input type="file" name="image" id="image" class="productos_img ">
 					</div>
-					<button type="submit">Agregar producto</button>
+					<button type="submit" class="form-button">Agregar producto</button>
 				</form>
-			</h2>
+
 
 
 	<%- include('./partials/footer') %>
