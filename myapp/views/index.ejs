@@ -41,10 +41,21 @@
 							<img src="/images/products/img-funda1.jpg" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
-							<p>Comentarios: 12</p>
-						</article>
+							<h2>Funda Arcoiris</h2>
+						  
+							<% 
+							   let descripcion = "Funda de silicona arcoiris, flexible y suave al tacto. Ofrece una excelente protección contra golpes y rayones, mientras le da a tu dispositivo un look moderno y divertido";
+							   let descripcionAcortada = "";
+							  for (let i = 0; i < 50 && i < descripcion.length; i++) {
+								descripcionAcortada += descripcion[i];
+							  }
+							  descripcionAcortada += "...";
+							%>
+						  
+							<p><%= descripcionAcortada %></p>
+							<p>Comentarios: 3</p>
+						  </article>
+						  
 					</a>
 				</section>
 			</div>
@@ -55,10 +66,18 @@
 							<img src="/images/products/img-funda2.jpg" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
-							<p>Comentarios: 12</p>
+							<h2>Funda Aurora Pastel</h2>
+							<% 
+							 descripcion = "Elegante funda de silicona con acabado mate y diseño degradado en tonos pastel. Suave al tacto, flexible y resistente, ideal para proteger tu celular con estilo y personalidad.";
+							 descripcionAcortada = "";
+							for (let i = 0; i < 50 && i < descripcion.length; i++) {
+							  descripcionAcortada += descripcion[i];
+							}
+							descripcionAcortada += "...";
+						  %>
+						
+						  <p><%= descripcionAcortada %></p>
+							<p>Comentarios: 3</p>
 						</article>
 					</a>
 				</section>
@@ -70,10 +89,19 @@
 							<img src="/images/products/img-funda3.jpg" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
-							<p>Comentarios: 12</p>
+							<h2>Funda Mármol Rosado Luxe</h2>
+							<% 
+							 descripcion = "Diseño de mármol rosado con brillos. Elegante, flexible y suave al tacto.";
+							 descripcionAcortada = "";
+							for (let i = 0; i < 50 && i < descripcion.length; i++) {
+							  descripcionAcortada += descripcion[i];
+							}
+							descripcionAcortada += "...";
+						  %>
+						
+						  <p><%= descripcionAcortada %></p>
+							
+							<p>Comentarios: 3</p>
 						</article>
 					</a>
 				</section>
@@ -85,10 +113,19 @@
 							<img src="/images/products/img-funda4.jpg" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
-							<p>Comentarios: 12</p>
+							<h2>"Funda Glam Rosa Mirror</h2>
+							<% 
+							 descripcion = "Funda con glitter rosa y espejo. Moderna, llamativa y súper elegante.";
+							 descripcionAcortada = "";
+							for (let i = 0; i < 50 && i < descripcion.length; i++) {
+							  descripcionAcortada += descripcion[i];
+							}
+							descripcionAcortada += "...";
+						  %>
+						
+						  <p><%= descripcionAcortada %></p>
+						
+							<p>Comentarios: 3 </p>
 						</article>
 					</a>
 				</section>
