@@ -5,12 +5,8 @@ const comentarios = data.comentarios;
 
 const productController = {
    product: function (req, res) {
-      const nombreProducto = productos[0].nombre;
-		const descripcionProducto = productos[0].descripcion;
-		const imgProducto = productos[0].imagenProducto;
-      const imgUsuario = usuarios.fotoPerfil;
-      const nombreUsuario = usuarios.usuario;
-      return res.render('product', {productos:productos, nombreProducto:nombreProducto, descripcionProducto:descripcionProducto,imgProducto:imgProducto, comentarios:comentarios, imgUsuario: imgUsuario, nombreUsuario:nombreUsuario})
+      const idBuscado = req.params.brand 
+      return res.render('product', {productos:productos, comentarios:comentarios, idBuscado: idBuscado})
    },
    homeProduct: function(req,res){
       return res.render('product')
