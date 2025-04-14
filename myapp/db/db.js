@@ -82,38 +82,189 @@ const dataebase ={
       usuario_id: 1
     }
   ],
-  comentarios : [
-    { id: 1, id_producto: 1, id_usuario: 1, comentario: "¡La funda es hermosa! Me encantó." },
-    { id: 2, id_producto: 1, id_usuario: 2, comentario: "Me gustó, aunque esperaba otro material." },
-    { id: 3, id_producto: 1, id_usuario: 3, comentario: "Llegó rápido y en buen estado." },
-    { id: 4, id_producto: 2, id_usuario: 4, comentario: "Colores hermosos, muy buena calidad." },
-    { id: 5, id_producto: 2, id_usuario: 5, comentario: "Es tal cual la foto, ¡recomiendo!" },
-    { id: 6, id_producto: 2, id_usuario: 1, comentario: "Un poco fina, pero linda igual." },
-    { id: 7, id_producto: 3, id_usuario: 2, comentario: "Muy elegante." },
-    { id: 8, id_producto: 3, id_usuario: 3, comentario: "La textura es muy suave." },
-    { id: 9, id_producto: 3, id_usuario: 4, comentario: "Mi funda favorita hasta ahora." },
-    { id: 10, id_producto: 4, id_usuario: 5, comentario: "Me encanta el brillo y el espejo." },
-    { id: 11, id_producto: 4, id_usuario: 1, comentario: "Ideal para selfies con el espejo." },
-    { id: 12, id_producto: 4, id_usuario: 2, comentario: "Un diseño muy original." },
-    { id: 13, id_producto: 5, id_usuario: 2, comentario: "Un diseño muy original." },
-    { id: 14, id_producto: 5, id_usuario: 3, comentario: "El glitter no se cae, excelente." },
-    { id: 15, id_producto: 5, id_usuario: 5, comentario: "Muy bonita y delicada." },
-    { id: 16, id_producto: 6, id_usuario: 1, comentario: "Perfecta para la noche, mágica." },
-    { id: 17, id_producto: 6, id_usuario: 2, comentario: "Muy original, todos me preguntan dónde la compré." },
-    { id: 18, id_producto: 6, id_usuario: 3, comentario: "¡10 puntos! No decepciona." },
-    { id: 19, id_producto: 7, id_usuario: 4, comentario: "Me fascina el diseño con estrellas." },
-    { id: 20, id_producto: 7, id_usuario: 5, comentario: "Es más linda en persona." },
-    { id: 21, id_producto: 7, id_usuario: 1, comentario: "Muy recomendada." },
-    { id: 22, id_producto: 8, id_usuario: 2, comentario: "Las mariposas se ven muy reales." },
-    { id: 23, id_producto: 8, id_usuario: 3, comentario: "Hermoso diseño, parece de arte." },
-    { id: 24, id_producto: 8, id_usuario: 4, comentario: "Muy delicada, me encanta." },
-    { id: 25, id_producto: 9, id_usuario: 5, comentario: "Estilo urbano, justo lo que buscaba." },
-    { id: 26, id_producto: 9, id_usuario: 1, comentario: "Muy original y distinta." },
-    { id: 27, id_producto: 9, id_usuario: 2, comentario: "Me re gustó, ¡gracias!" },
-    { id: 28, id_producto: 10, id_usuario: 3, comentario: "Diseño moderno, me encantó." },
-    { id: 29, id_producto: 10, id_usuario: 4, comentario: "Los corazones son un toque genial." },
-    { id: 30, id_producto: 10, id_usuario: 5, comentario: "Perfecta para regalar." }
-  ] 
+  comentarios :  [
+      {
+        id_producto: 1,
+        nombreUsuario: "brian@digitalhouse.com",
+        textoComentario: "¡La funda es hermosa! Me encantó.",
+        imagenPerfil: "/images/users/foto.png"
+      },
+      {
+        id_producto: 1,
+        nombreUsuario: "luis@digitalhouse.com",
+        textoComentario: "Me gustó, aunque esperaba otro material.",
+        imagenPerfil: "/images/users/foto1.png"
+      },
+      {
+        id_producto: 1,
+        nombreUsuario: "martu@digitalhouse.com",
+        textoComentario: "Llegó rápido y en buen estado.",
+        imagenPerfil: "/images/users/foto2.png"
+      },
+      {
+        id_producto: 2,
+        nombreUsuario: "lola@digitalhouse.com",
+        textoComentario: "Colores hermosos, muy buena calidad.",
+        imagenPerfil: "/images/users/foto3.png"
+      },
+      {
+        id_producto: 2,
+        nombreUsuario: "ema@digitalhouse.com",
+        textoComentario: "Es tal cual la foto, ¡recomiendo!",
+        imagenPerfil: "/images/users/foto4.png"
+      },
+      {
+        id_producto: 2,
+        nombreUsuario: "brian@digitalhouse.com",
+        textoComentario: "Un poco fina, pero linda igual.",
+        imagenPerfil: "/images/users/foto.png"
+      },
+      {
+        id_producto: 3,
+        nombreUsuario: "luis@digitalhouse.com",
+        textoComentario: "Muy elegante.",
+        imagenPerfil: "/images/users/foto1.png"
+      },
+      {
+        id_producto: 3,
+        nombreUsuario: "martu@digitalhouse.com",
+        textoComentario: "La textura es muy suave.",
+        imagenPerfil: "/images/users/foto2.png"
+      },
+      {
+        id_producto: 3,
+        nombreUsuario: "lola@digitalhouse.com",
+        textoComentario: "Mi funda favorita hasta ahora.",
+        imagenPerfil: "/images/users/foto3.png"
+      },
+      {
+        id_producto: 4,
+        nombreUsuario: "ema@digitalhouse.com",
+        textoComentario: "Me encanta el brillo y el espejo.",
+        imagenPerfil: "/images/users/foto4.png"
+      },
+      {
+        id_producto: 4,
+        nombreUsuario: "brian@digitalhouse.com",
+        textoComentario: "Ideal para selfies con el espejo.",
+        imagenPerfil: "/images/users/foto.png"
+      },
+      {
+        id_producto: 4,
+        nombreUsuario: "luis@digitalhouse.com",
+        textoComentario: "Un diseño muy original.",
+        imagenPerfil: "/images/users/foto1.png"
+      },
+      {
+        id_producto: 5,
+        nombreUsuario: "luis@digitalhouse.com",
+        textoComentario: "Un diseño muy original.",
+        imagenPerfil: "/images/users/foto1.png"
+      },
+      {
+        id_producto: 5,
+        nombreUsuario: "martu@digitalhouse.com",
+        textoComentario: "El glitter no se cae, excelente.",
+        imagenPerfil: "/images/users/foto2.png"
+      },
+      {
+        id_producto: 5,
+        nombreUsuario: "ema@digitalhouse.com",
+        textoComentario: "Muy bonita y delicada.",
+        imagenPerfil: "/images/users/foto4.png"
+      },
+      {
+        id_producto: 6,
+        nombreUsuario: "brian@digitalhouse.com",
+        textoComentario: "Perfecta para la noche, mágica.",
+        imagenPerfil: "/images/users/foto.png"
+      },
+      {
+        id_producto: 6,
+        nombreUsuario: "luis@digitalhouse.com",
+        textoComentario: "Muy original, todos me preguntan dónde la compré.",
+        imagenPerfil: "/images/users/foto1.png"
+      },
+      {
+        id_producto: 6,
+        nombreUsuario: "martu@digitalhouse.com",
+        textoComentario: "¡10 puntos! No decepciona.",
+        imagenPerfil: "/images/users/foto2.png"
+      },
+      {
+        id_producto: 7,
+        nombreUsuario: "lola@digitalhouse.com",
+        textoComentario: "Me fascina el diseño con estrellas.",
+        imagenPerfil: "/images/users/foto3.png"
+      },
+      {
+        id_producto: 7,
+        nombreUsuario: "ema@digitalhouse.com",
+        textoComentario: "Es más linda en persona.",
+        imagenPerfil: "/images/users/foto4.png"
+      },
+      {
+        id_producto: 7,
+        nombreUsuario: "brian@digitalhouse.com",
+        textoComentario: "Muy recomendada.",
+        imagenPerfil: "/images/users/foto.png"
+      },
+      {
+        id_producto: 8,
+        nombreUsuario: "luis@digitalhouse.com",
+        textoComentario: "Las mariposas se ven muy reales.",
+        imagenPerfil: "/images/users/foto1.png"
+      },
+      {
+        id_producto: 8,
+        nombreUsuario: "martu@digitalhouse.com",
+        textoComentario: "Hermoso diseño, parece de arte.",
+        imagenPerfil: "/images/users/foto2.png"
+      },
+      {
+        id_producto: 8,
+        nombreUsuario: "lola@digitalhouse.com",
+        textoComentario: "Muy delicada, me encanta.",
+        imagenPerfil: "/images/users/foto3.png"
+      },
+      {
+        id_producto: 9,
+        nombreUsuario: "ema@digitalhouse.com",
+        textoComentario: "Estilo urbano, justo lo que buscaba.",
+        imagenPerfil: "/images/users/foto4.png"
+      },
+      {
+        id_producto: 9,
+        nombreUsuario: "brian@digitalhouse.com",
+        textoComentario: "Muy original y distinta.",
+        imagenPerfil: "/images/users/foto.png"
+      },
+      {
+        id_producto: 9,
+        nombreUsuario: "luis@digitalhouse.com",
+        textoComentario: "Me re gustó, ¡gracias!",
+        imagenPerfil: "/images/users/foto1.png"
+      },
+      {
+        id_producto: 10,
+        nombreUsuario: "martu@digitalhouse.com",
+        textoComentario: "Diseño moderno, me encantó.",
+        imagenPerfil: "/images/users/foto2.png"
+      },
+      {
+        id_producto: 10,
+        nombreUsuario: "lola@digitalhouse.com",
+        textoComentario: "Los corazones son un toque genial.",
+        imagenPerfil: "/images/users/foto3.png"
+      },
+      {
+        id_producto: 10,
+        nombreUsuario: "ema@digitalhouse.com",
+        textoComentario: "Perfecta para regalar.",
+        imagenPerfil: "/images/users/foto4.png"
+      }
+    ]
+    
 };
 
 module.exports = dataebase;
