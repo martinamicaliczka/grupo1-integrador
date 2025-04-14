@@ -17,7 +17,8 @@ const userController = {
             email:email,
             foto:foto,
             productos: productos,
-            comentarios: comentarios});
+            comentarios: comentarios
+        });
     },
     edit: function (req, res) {
         return res.render('profile-edit')
