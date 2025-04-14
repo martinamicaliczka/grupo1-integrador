@@ -27,18 +27,18 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> </h2>
-				<form action="/product" method="get" class="formulario-registro">
+				<form action="/" method="get" class="formulario-registro">
 					<div>
 						<label for="nombre-producto" class="product-label">Nombre del producto:</label>
-						<input type="text" name="nombre-producto" id="nombre-producto" class="form-input">
+						<input type="text" name="nombre-producto" id="nombre-producto" class="form-input" required>
 					</div>
 					<div>
 						<label for="descripcion" class="product-label">Descripcion del producto:</label>
-						<input type="text" name="descripcion" id="descripcion" class="form-input">
+						<input type="text" name="descripcion" id="descripcion" class="form-input" required>
 					</div>
 					<div>
 						<label for="imagen" class="product-label">Seleccionar imagen</label>
-						<input type="file" name="image" id="image" class="productos_img ">
+						<input type="file" name="image" id="image" class="productos_img" required>
 					</div>
 					<button type="submit" class="form-button">Agregar producto</button>
 				</form>
