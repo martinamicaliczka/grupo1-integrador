@@ -16,10 +16,7 @@ const productController = {
       return res.render('product')
    },
     results: function (req, res) {
-      const nombreProducto = productos[0].nombre;
-      const descripcionProducto = productos[0].descripcion;
-      const imgProducto = productos[0].imagenProducto;
-      return res.render('search-results', {nombreProducto:nombreProducto, descripcionProducto:descripcionProducto, imgProducto:imgProducto});
+      return res.render('search-results', {productos:productos, comentarios:comentarios});
     },
 
     agregarProductos: function(req,res){
