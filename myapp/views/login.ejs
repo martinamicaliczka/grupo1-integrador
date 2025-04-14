@@ -13,7 +13,7 @@
 	<!-- Bootstrap Grid Stylesheet -->
 	<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
 	<!-- Own Stylesheet -->
-	<link rel="stylesheet" href="/stylesheets/app.css">
+	<link rel="stylesheet" href="/stylesheets/register.css">
 </head>
 
 <body>
@@ -26,21 +26,21 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
-					<form action="/users/profile" method="get">
-						<div>
-							<label for="email">Usuario (Email): </label>
-							<input type="email" name="email" id="email" required>
+					<form action="/users/profile" method="get" class="formulario-login" >
+						<div class="divlog">
+							<label for="email" class="form-label">Usuario (Email): </label>
+							<input type="email" name="email" id="email" class="form-input" required>
 						</div>
-						<div>
-							<label for="Contrasenia">Contraseña: </label>
-							<input type="password" name="Contrasenia" id="Contrasenia" required>
+						<div class="divlog">
+							<label for="Contrasenia" class="form-label" >Contraseña: </label>
+							<input type="password" name="Contrasenia" id="Contrasenia" class="form-input" required>
 						</div>
-						<div>
-							<input type="checkbox" name="recordame" value="recordame">
-							<label for="Recordame">Recordame</label>
+						<div class="checkboxdiv">
+							<input type="checkbox" name="recordame" value="recordame" class="checkbox">
+							<label for="Recordame" class="recordame">Recordame</label>
 						</div>
-						<div>
-							<button class="ingresar" type="submit">Ingresar</button>
+						<div class="divlog">
+							<button class="form-button" type="submit">Ingresar</button>
 						</div>
 					</form>
 			</h2>

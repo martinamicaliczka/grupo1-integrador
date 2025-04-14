@@ -242,9 +242,14 @@ hr {
     margin-bottom: 20px;
 }
 .form-label{
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     font-size: 14px;
     font-weight: 400;
+}
+.recordame{
+  margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
 }
 .form-input{
     width: 100%;
@@ -269,7 +274,30 @@ hr {
     margin: 20px 0;
     font-weight: bold;
 }
-
+.formulario-login{
+  max-width: 500px;
+    background-color: #ffffff;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+}
+.divlog {
+  margin-bottom: 15px;
+}
+.checkboxdiv {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.checkboxdiv .form-label {
+  font-size: 12px;
+  margin-left: 8px;
+}
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
   .main-header_credit-link {
