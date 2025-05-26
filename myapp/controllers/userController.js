@@ -1,7 +1,4 @@
-const data = require('../db/db'); 
-const usuarios = data.usuarios;
-const productos = data.productos;
-const comentarios = data.comentarios;
+const db = require('../database/models');
 const bcryptjs = require("bcryptjs");
 const userController = {
     login: function (req, res) {
@@ -29,9 +26,9 @@ const userController = {
                 let usuario = req.body.usuario;
                 let email = req.body.email;
                 let password = req.body.contrasenia;
-                let fechaNacimiento = req.body.fechaNacimiento;
-                let nroDocumento = req.body.nroDocumento;
-                let fotoPerfil = req.body.fotoPerfil;
+                let fechaNacimiento = req.body.fecha;
+                let dni = req.body.dni;
+                let fotoPerfil = req.body.foto-perfil;
         
                 // guardar el usuario
                 let username = {
@@ -39,7 +36,7 @@ const userController = {
                     email: email,
                     password: bcryptjs.hashSync(password, 10),
                     fechaNacimiento: fechaNacimiento,
-                    nroDocumento: nroDocumento,
+                    dni: dni,
                     fotoPerfil: fotoPerfil
                 }
         

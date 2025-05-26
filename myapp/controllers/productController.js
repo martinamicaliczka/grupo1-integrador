@@ -1,7 +1,5 @@
-const data = require('../db/db'); 
-const usuarios = data.usuarios;
-const productos = data.productos;
-const comentarios = data.comentarios;
+const db = require('../database/models'); 
+
 
 const productController = {
    product: function (req, res) {

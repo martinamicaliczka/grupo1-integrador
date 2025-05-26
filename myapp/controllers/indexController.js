@@ -1,9 +1,19 @@
-const dataebase = require('../db/db');
-const productos = dataebase.productos;
-const comentarios = dataebase.comentarios;
+const db = require('../database/models');
+
 const indexController = {
    index: function (req, res) {
-      return res.render('index', {productos:productos, comentarios:comentarios })
+
+      db.Usuario.findAll()
+      .then(function(resultados) {
+
+         return res.send(resultados)
+         return res.render('index', {productos:productos, comentarios:comentarios })
+
+         
+      }).catch(function(err) {
+         return res.send(err)
+      })
+
    },
    register: function(req,res){
       return res.render('index');
