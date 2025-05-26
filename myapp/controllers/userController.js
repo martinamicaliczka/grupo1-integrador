@@ -25,18 +25,24 @@ const userController = {
     }, 
     create: function(req,res){
           // recuperar los datos del form
-                let username = req.body.username;
+                let usuario = req.body.usuario;
                 let email = req.body.email;
-                let password = req.body.password;
+                let password = req.body.contrasenia;
+                let fechaNacimiento = req.body.fechaNacimiento;
+                let nroDocumento = req.body.nroDocumento;
+                let fotoPerfil = req.body.fotoPerfil;
         
                 // guardar el usuario
-                let usuario = {
-                    name: username,
+                let username = {
+                    name: usuario,
                     email: email,
-                    password: bcryptjs.hashSync(password, 10)
+                    password: bcryptjs.hashSync(password, 10),
+                    fechaNacimiento: fechaNacimiento,
+                    nroDocumento: nroDocumento,
+                    fotoPerfil: fotoPerfil
                 }
         
-                db.User.create(usuario)
+                db.usuarios.create(username)
                     .then(function(results) {
                         return res.redirect("/")
                     })
