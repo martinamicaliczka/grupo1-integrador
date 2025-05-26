@@ -2,6 +2,7 @@ const data = require('../db/db');
 const usuarios = data.usuarios;
 const productos = data.productos;
 const comentarios = data.comentarios;
+const bcryptjs = require("bcryptjs");
 const userController = {
     login: function (req, res) {
         return res.render('login')
@@ -42,7 +43,7 @@ const userController = {
                     fotoPerfil: fotoPerfil
                 }
         
-                db.usuarios.create(username)
+                data.usuarios.create(username)
                     .then(function(results) {
                         return res.redirect("/")
                     })
