@@ -22,16 +22,17 @@ const userController = {
         return res.render('profile-edit')
     }, 
     create: function(req,res){
+        //return res.send(req.body)
           // recuperar los datos del form
                 let usuario = req.body.usuario;
                 let email = req.body.email;
                 let password = req.body.contrasenia;
                 let fechaNacimiento = req.body.fecha;
                 let dni = req.body.dni;
-                let fotoPerfil = req.body.foto-perfil;
+                let fotoPerfil = req.body.fotoPerfil;
         
                 // guardar el usuario
-                let username = {
+                let userNew = {
                     name: usuario,
                     email: email,
                     password: bcryptjs.hashSync(password, 10),
@@ -39,8 +40,8 @@ const userController = {
                     dni: dni,
                     fotoPerfil: fotoPerfil
                 }
-        
-                data.usuarios.create(username)
+                //return res.send(userNew)
+                db.Usuario.create(userNew)
                     .then(function(results) {
                         return res.redirect("/")
                     })

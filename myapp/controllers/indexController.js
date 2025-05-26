@@ -3,11 +3,11 @@ const db = require('../database/models');
 const indexController = {
    index: function (req, res) {
 
-      db.Usuario.findAll()
+      db.Producto.findAll()
       .then(function(resultados) {
 
          return res.send(resultados)
-         return res.render('index', {productos:productos, comentarios:comentarios })
+         return res.render('index', {productos:resultados, comentarios:comentarios })
 
          
       }).catch(function(err) {
