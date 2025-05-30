@@ -14,10 +14,13 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<div class="col-12"> 
+				<% if (error) { %>
+					<p class="error"><%= error %></p>
+				<% } %>
 				<form action="/users/register" method="post" class="formulario-login" >
 					<div class="div_formulario">
 						<label for="email" class="form-label register-label">Email:</label>
-						<input type="email" name="email" id="email" class="form-input" required>
+						<input type="email" name="email" id="email" class="form-input">
 					</div>
 					<div class="div_formulario">
 						<label for="usuario" class="form-label">Usuario:</label>
