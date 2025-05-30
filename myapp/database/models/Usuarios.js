@@ -33,23 +33,22 @@ module.exports = function(sequelize, DataTypes){
     }
     let config = {
         tableName: "usuarios",
-        timestamps: false,
+        timestamps: true,
+        underscored: false
     }
 
     let Usuario = sequelize.define(alias,cols,config);
 
-    Usuario.associate = function(models){
+    Usuario.associate = function(models) {
         Usuario.hasMany(models.Producto, {
-            as:"producto",
-            foreignKey: "idUsuario"
-        })
-    }
-    Usuario.associate = function(models){
+          as: "producto",
+          foreignKey: "idUsuario"
+        });
         Usuario.hasMany(models.Comentario, {
-            as:"comentario",
-            foreignKey: "idUsuario"
-        })
-    }
+          as: "comentario",
+          foreignKey: "idUsuario"
+        });
+      }
 
     return Usuario }
 
