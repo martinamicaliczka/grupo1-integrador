@@ -2,9 +2,48 @@ const db = require('../database/models');
 const bcryptjs = require("bcryptjs");
 
 const userController = {
-  login: function (req, res) {
-    return res.render('login');
-  },
+    login: function (req, res) {
+        if (req.session.usuarioLogeado) {
+            return res.redirect('/users/profile');
+        }
+        return res.render('login');
+        },
+        
+        loginProcess: function (req, res) {
+            db.Usuario.findOne({
+                where: { email: req.body.email }
+            }).then(function(user) {
+                if (!user) {
+                    return res.render('login', {
+                        errors: {
+                            email: { msg: 'El email no está registrado' }
+                        }
+                    });
+                }
+
+                if (req.body.contrasenia != user.contrasenia) {
+                    return res.render('login', {
+                        errors: {
+                            contrasenia: { msg: 'La contraseña es incorrecta' }
+                        }
+                    });
+                }
+
+                req.session.usuarioLogeado = user;
+
+                if (req.body.recordame != undefined) {
+                    res.cookie('recordame', user.email, { maxAge: 600000 }); // 10 min
+                }
+
+            return res.redirect('/users/profile');
+        });
+    },
+
+    logout: function (req, res) {
+    res.clearCookie('recordame');
+    req.session.destroy();
+    return res.redirect('/');
+},
 
   register: function (req, res) {
     if(req.session.usuarioLogeado){
