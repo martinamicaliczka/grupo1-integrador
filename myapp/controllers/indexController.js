@@ -3,12 +3,10 @@ const db = require('../database/models');
 const indexController = {
    index: function (req, res) {
 
-      db.Producto.findAll()
-      .then(function(resultados) {
+      db.Producto.findAll({include:[{association: "usuario"}]})
+      .then(function(productos) {
 
-         return res.send(resultados)
-         return res.render('index', {productos:resultados, comentarios:comentarios })
-
+         return res.render('index', {productos:productos })
          
       }).catch(function(err) {
          return res.send(err)

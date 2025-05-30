@@ -70,12 +70,12 @@ const userController = {
   },
 
   create: function (req, res) {
-    const email = req.body.email;
-    const usuario = req.body.usuario;
-    const password = req.body.contrasenia;
-    const fechaNacimiento = req.body.fecha;
-    const dni = req.body.dni;
-    const fotoPerfil = req.body.fotoPerfil;
+    let email = req.body.email;
+    let usuario = req.body.usuario;
+    let password = req.body.contrasenia;
+    let fechaNacimiento = req.body.fecha;
+    let dni = req.body.dni;
+    let fotoPerfil = req.body.fotoPerfil;
 
     db.Usuario.findOne({ where: { email: email } })
       .then(function (usuarioExistente) {
@@ -101,7 +101,6 @@ const userController = {
           fechaNacimiento: fechaNacimiento,
           dni: dni,
           fotoPerfil: fotoPerfil,
-          created_at: new Date()
         };
 
         db.Usuario.create(userNew)
