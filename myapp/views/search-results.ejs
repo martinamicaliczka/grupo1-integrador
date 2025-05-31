@@ -4,51 +4,49 @@
 
 <%- include('./partials/head') %>
 
-<body>
-	<%- include('./partials/header') %>
+	<body>
+		<%- include('./partials/header') %>
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Resultados de búsqueda</h2>
-			</div>
-			<!-- Show the "ultimos" products -->
-			<% for (let i = 0; i < 3; i++) { 
-				let producto = productos[i];
-				let descripcion = producto.descripcion;
-				let descripcionAcortada = "";
-				for (let j = 0; j < 50 && j < descripcion.length; j++) {
-				  descripcionAcortada += descripcion[j];
-				}
-				descripcionAcortada += "...";
-			  %>
-				<div class="col-12 col-sm-6 col-lg-3">
-				  <section class="product-box">
-					<a href="/product/<%= producto.id %>">
-					  <figure class="product-box_image">
-						<img src="<%= producto.imagenProducto %>" alt="<%= producto.nombre %>">
-					  </figure>
-					  <article class="product-box_data">
-						<h2><%= producto.nombre %></h2>
-						<p><%= descripcionAcortada %></p>
-		  
-						<% let coments = 0; %>
-						<% for (let j = 0; j < comentarios.length; j++) { %>
-						  <% if (comentarios[j].idProducto == producto.id) { %>
-							<% coments += 1; %>
-						  <% } %>
+			<!-- Novedades -->
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Resultados de búsqueda</h2>
+					</div>
+					<!-- Show the "ultimos" products -->
+					<% if (respuesta) { %>
+						<div class="col-12">
+							<p><%= respuesta %></p>
+						</div>
+					<% } else { %>
+						<% for (var i = 0; i < 3; i++) { 
+							var producto = resultados[i]; 
+							var descripcion = producto.descripcion; 
+							var descripcionAcortada = ""; 
+							for (var j = 0; j < 50 && j < descripcion.length; j++) { 
+								descripcionAcortada += descripcion[j]; 
+							} 
+							descripcionAcortada += "..."; 
+						%>
+							<div class="col-12 col-sm-6 col-lg-3">
+								<section class="product-box">
+									<a href="/product/<%= producto.id %>">
+										<figure class="product-box_image">
+											<img src="<%= producto.imagenProducto %>" alt="<%= producto.nombre %>">
+										</figure>
+										<article class="product-box_data">
+											<h2><%= producto.nombre %></h2>
+											<p><%= descripcionAcortada %></p>
+											<p>Subido por: <%= producto.usuario %></p>
+											<p>Comentarios: <%= producto.comentarios.length %></p>
+										</article>
+									</a>
+								</section>
+							</div>
 						<% } %>
-						<p>Comentarios: <%= coments %></p>
-					  </article>
-					</a>
-				  </section>
+					<% } %>
 				</div>
-			  <% } %>
-	
 
-	<%- include('./partials/footer') %>
-
-</body>
-
+				<%- include('./partials/footer') %>
+	</body>
 </html>
