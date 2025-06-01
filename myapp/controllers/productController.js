@@ -5,8 +5,22 @@ const op = db.Sequelize.Op;
 const productController = {
    product: function (req, res) {
       const idBuscado = req.params.id;
-      return res.render('product', {productos:productos, comentarios:comentarios, idBuscado: idBuscado})
-   },
+      db.Producto.findAll({
+        include: [
+          { association: 'usuario' },
+          {
+            association: 'comentarios',
+            include: [{ association: 'usuario' }]
+          }
+        ]
+      })
+      .then(function (productos) {
+        return res.render("product", {productos: productos, idBuscado: idBuscado});
+      })
+      .catch(function (error) {
+        return res.send(error);
+      });
+    },
    results: function (req, res) {
     let buscado = req.query.search;
     buscado = "%" + buscado + "%";

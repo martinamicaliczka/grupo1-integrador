@@ -39,13 +39,13 @@
 				</article>
 				<div class="col-12 col-lg-4">
 		<section class="comments">
-		  <% for (let j = 0; j < comentarios.length; j++) {
-			let comentario = comentarios[j]; 
+		  <% for (let j = 0; j < producto.comentarios.length; j++) {
+			let comentario = producto.comentarios[j]; 
 			let idComment = comentario.idProducto;
 			if (idComment == idBuscado) {
-			  let nombreUsuario = comentario.nombreUsuario;
-			  let imagenPerfil = comentario.imagenPerfil;
-			  let texto = comentario.textoComentario;
+			  let nombreUsuario = comentario.usuario.email;
+			  let imagenPerfil = comentario.usuario.foto;
+			  let texto = comentario.comentario;
 		  %>
 			<article>
 			  <img src="<%= imagenPerfil %>" alt="<%= nombreUsuario %>">

@@ -38,8 +38,8 @@
 						<p><%= descripcionAcortada %></p>
 		  
 						<% let coments = 0; %>
-						<% for (let j = 0; j < comentarios.length; j++) { %>
-						  <% if (comentarios[j].idProducto == producto.id) { %>
+						<% for (let j = 0; j < producto.comentarios.length; j++) { %>
+						  <% if (producto.comentarios[j].idProducto == producto.id) { %>
 							<% coments += 1; %>
 						  <% } %>
 						<% } %>
