@@ -50,7 +50,25 @@ const productController = {
     agregarProductos: function(req,res){
       const usuarioLogeado = usuarios.usuario;
       return res.render('product-add', {usuarioLogeado: usuarioLogeado});
+    },
+    nuevoComentario:function (req, res) {
+      if (req.session.user == undefined) {
+        return res.redirect("/users/login");
+      }
+      else {
+        db.Comentario.create({
+          idProducto: req.body.idProducto,
+          idUsuario: req.session.usuarioLogeado.id,
+          comentario: req.body.comentario,
+      })
+      .then(function () {
+        return res.redirect("/product/" + req.body.idProducto);
+    })
+    .catch(function (err) {
+        return res.send(err);
+    });
     }
+  }
  };
  
  

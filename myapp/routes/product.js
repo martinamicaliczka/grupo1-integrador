@@ -7,4 +7,6 @@ const productController = require('../controllers/productController')
 router.get('/search-results', productController.results);
 router.get('/product-add', productController.agregarProductos);
 router.get('/:id', productController.product);
+router.post('/:id/comentario', productController.nuevoComentario);
+
 module.exports = router;

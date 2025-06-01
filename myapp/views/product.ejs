@@ -58,9 +58,10 @@
 			</article>
 		  <% } } %>
 		</section>
-		<form class="form" action="/" method="GET">
-		  <input class="form-input" type="text" value="" placeholder="Agregar comentario">
-		  <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+		<form class="form" action="/product/<%= producto.id %>/comentario" method="POST">
+  			<input type="hidden" name="idProducto" value="<%= producto.id %>">
+  			<textarea class="form-input" name="comentario" placeholder="Agregar comentario" required></textarea>
+  			<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 		</form>
 		<hr>
 	  </div>
