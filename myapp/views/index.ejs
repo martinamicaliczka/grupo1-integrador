@@ -34,12 +34,16 @@
 						<img src="/images/products/<%= producto.imagenProducto %>" alt="<%= producto.nombre %>">
 					  </figure>
 					  <article class="product-box_data">
-						<h2><%= producto.nombre %></h2>
-						<a href="/users/public/<%= producto.usuario.username %>">Subido por: <%= producto.usuario.username %></a>						
+						<h2><%= producto.nombre %></h2>						
 						<p><%= descripcionAcortada %></p>
 						<p>Comentarios: <%= producto.comentarios.length %></p>
 					  </article>
 					</a>
+					<p>
+						Subido por:
+						<a href="/users/public/<%= producto.usuario.username %>">
+							 <%= producto.usuario.username %></a>
+					</p>
 				  </section>
 				</div>
 			  <% } %>
