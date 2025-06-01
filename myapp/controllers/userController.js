@@ -6,7 +6,7 @@ const userController = {
         if (req.session.usuarioLogeado) {
             return res.redirect('/users/profile');
         }
-        return res.render('login');
+        return res.render('login', {msg: null});
         },
         
         loginProcess: function (req, res) {
@@ -14,21 +14,11 @@ const userController = {
                 where: { email: req.body.email }
             }).then(function(user) {
                 if (!user) {
-                    return res.render('login', {
-                        errors: {
-                            email: { msg: 'El email no está registrado' }
-                        }
-                    });
+                    return res.render('login', {msg: 'El email no está registrado'});
                 }
-
-                if (req.body.contrasenia != user.contrasenia) {
-                    return res.render('login', {
-                        errors: {
-                            contrasenia: { msg: 'La contraseña es incorrecta' }
-                        }
-                    });
+                if (!bcryptjs.compareSync(req.body.contrasenia, user.contrasenia)) {
+                    return res.render('login', { msg: 'La contraseña es incorrect '});
                 }
-
                 req.session.usuarioLogeado = user;
 
                 if (req.body.recordame != undefined) {

@@ -15,14 +15,17 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
-					<form action="/users/profile" method="get" class="formulario-login" >
+				<% if (msg) { %>
+				 <p class="msg"><%= msg %></p>
+				<% } %>
+					<form action="/users/login" method="post" class="formulario-login" >
 						<div class="divlog">
 							<label for="email" class="form-label">Usuario (Email): </label>
 							<input type="email" name="email" id="email" class="form-input" required>
 						</div>
 						<div class="divlog">
-							<label for="Contrasenia" class="form-label" >Contraseña: </label>
-							<input type="password" name="Contrasenia" id="Contrasenia" class="form-input" required>
+							<label for="contrasenia" class="form-label" >Contraseña: </label>
+							<input type="password" name="contrasenia" id="contrasenia" class="form-input" required>
 						</div>
 						<div class="checkboxdiv">
 							<input type="checkbox" name="recordame" value="recordame" class="checkbox">
