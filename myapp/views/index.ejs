@@ -35,8 +35,9 @@
 					  </figure>
 					  <article class="product-box_data">
 						<h2><%= producto.nombre %></h2>
+						<a href="/users/public/<%= producto.usuario.username %>">Subido por: <%= producto.usuario.username %></a>						
 						<p><%= descripcionAcortada %></p>
-						<a href="/users/public/<%= producto.usuario.username %>">Subido por: <%= producto.usuario.username %></a>						<p>Comentarios: <%= producto.comentarios.length %></p>
+						<p>Comentarios: <%= producto.comentarios.length %></p>
 					  </article>
 					</a>
 				  </section>

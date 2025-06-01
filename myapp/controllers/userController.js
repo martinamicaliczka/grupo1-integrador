@@ -104,12 +104,12 @@ const userController = {
 
         // Crear usuario nuevo
         let userNew = {
-          name: usuario,
-          email: email,
-          password: bcryptjs.hashSync(password, 10),
-          fechaNacimiento: fechaNacimiento,
-          dni: dni,
-          fotoPerfil: fotoPerfil,
+            username: usuario,
+            email: email,
+            contrasenia: bcryptjs.hashSync(password, 10),
+            fecha: fechaNacimiento,
+            dni: dni,
+            foto: fotoPerfil,
         };
 
         db.Usuario.create(userNew)
@@ -126,17 +126,20 @@ const userController = {
   },
   public: function(req, res){
     const userBuscado = req.params.user;
-    db.Usuario.findByPk(userBuscado, {
-        include: [{ association: 'productos', include:['comentarios'] }]
+    db.Usuario.findOne({
+        where: { username: userBuscado },
+        include: [
+          {association: 'producto',
+            include: ['comentarios']}]
       })
       .then(function(usuario) {
         if (!usuario) {
             return res.send("Lo siento, no econtramos el usuario que tu buscas");
         } else {
             return res.render('profile', {
-          usuario: usuario,
-          productos: usuario.productos,
-          totalProductos: usuario.productos.length
+          usuario: userBuscado,
+          productos: userBuscado.productos,
+          totalProductos: userBuscado.productos.length
         });
         }
         

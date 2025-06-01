@@ -10,5 +10,5 @@ router.get('/register', userController.register);
 router.post('/register', userController.create);
 router.get('/profile', userController.profile);
 router.get('/profile-edit', userController.edit);
-router.get('/:user', userController.public);
+router.get('/public/:user', userController.public);
 module.exports = router;
