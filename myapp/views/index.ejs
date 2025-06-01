@@ -36,14 +36,7 @@
 					  <article class="product-box_data">
 						<h2><%= producto.nombre %></h2>
 						<p><%= descripcionAcortada %></p>
-		  
-						<% let coments = 0; %>
-						<% for (let j = 0; j < producto.comentarios.length; j++) { %>
-						  <% if (producto.comentarios[j].idProducto == producto.id) { %>
-							<% coments += 1; %>
-						  <% } %>
-						<% } %>
-						<p>Comentarios: <%= coments %></p>
+						<a href="/users/public/<%= producto.usuario.username %>">Subido por: <%= producto.usuario.username %></a>						<p>Comentarios: <%= producto.comentarios.length %></p>
 					  </article>
 					</a>
 				  </section>

@@ -123,7 +123,28 @@ const userController = {
       .catch(function (err) {
         return res.send(err);
       });
-  }
+  },
+  public: function(req, res){
+    const userBuscado = req.params.user;
+    db.Usuario.findByPk(userBuscado, {
+        include: [{ association: 'productos', include:['comentarios'] }]
+      })
+      .then(function(usuario) {
+        if (!usuario) {
+            return res.send("Lo siento, no econtramos el usuario que tu buscas");
+        } else {
+            return res.render('profile', {
+          usuario: usuario,
+          productos: usuario.productos,
+          totalProductos: usuario.productos.length
+        });
+        }
+        
+      })
+      .catch(function (err) {
+        return res.send(err);
+      });
+}
 };
 
 module.exports = userController;

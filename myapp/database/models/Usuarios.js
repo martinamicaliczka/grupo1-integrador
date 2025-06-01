@@ -6,14 +6,8 @@ module.exports = function(sequelize, DataTypes){
             primaryKey: true,
             type: DataTypes.INTEGER
         },
-        createdAt:{
-            type:DataTypes.DATE
-        }, 
-        updatedAt: {
-            type: DataTypes.DATE
-        },
-        deletedAt: {
-            type: DataTypes.DATE
+        username:{
+            type: DataTypes.STRING
         },
         email:{
             type: DataTypes.STRING
@@ -29,6 +23,15 @@ module.exports = function(sequelize, DataTypes){
         },
         foto:{
             type: DataTypes.STRING
+        },
+        createdAt:{
+            type:DataTypes.DATE
+        }, 
+        updatedAt: {
+            type: DataTypes.DATE
+        },
+        deletedAt: {
+            type: DataTypes.DATE
         }
     }
     let config = {

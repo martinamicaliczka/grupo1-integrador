@@ -43,7 +43,7 @@
 			let comentario = producto.comentarios[j]; 
 			let idComment = comentario.idProducto;
 			if (idComment == idBuscado) {
-			  let nombreUsuario = comentario.usuario.email;
+			  let nombreUsuario = comentario.usuario.username;
 			  let imagenPerfil = comentario.usuario.foto;
 			  let texto = comentario.comentario;
 		  %>
@@ -51,7 +51,7 @@
 			  <img src="/images/users/<%= imagenPerfil %>" alt="<%= nombreUsuario %>">
 			  <div class="data">
 				<p class="user">
-				  <strong><a href="/users/profile"><%= nombreUsuario %></a></strong>
+				  <strong><a href="/users/public/<%= nombreUsuario %>"><%= nombreUsuario %></a></strong>
 				  <%= texto %>
 				</p>
 			  </div>
