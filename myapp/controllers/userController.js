@@ -127,9 +127,9 @@ const userController = {
             return res.send("Lo siento, no econtramos el usuario que tu buscas");
         } else {
             return res.render('profile', {
-          usuario: userBuscado,
-          productos: userBuscado.productos,
-          totalProductos: userBuscado.productos.length
+          usuario: usuario,
+          productos: usuario.producto,
+          totalProductos: usuario.producto.length
         });
         }
         
