@@ -39,10 +39,8 @@
 						<p>Comentarios: <%= producto.comentarios.length %></p>
 					  </article>
 					</a>
-					<p>
-						Subido por:
-						<a href="/users/public/<%= producto.usuario.username %>">
-							 <%= producto.usuario.username %></a>
+					<p class="subir">
+						Subido por:<a href="/users/public/<%= producto.usuario.username %>"> <%= producto.usuario.username %></a>
 					</p>
 				  </section>
 				</div>
