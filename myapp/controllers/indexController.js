@@ -14,12 +14,6 @@ const indexController = {
          return res.send(err)
       })
 
-   },
-   register: function(req,res){
-      return res.render('index');
-   }, 
-   login: function(req,res){
-      return res.render('index');
    }
 };
  

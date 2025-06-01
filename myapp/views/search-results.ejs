@@ -19,9 +19,9 @@
 							<p><%= respuesta %></p>
 						</div>
 					<% } else { %>
-						<% for (var i = 0; i < 3; i++) { 
+						<<% for (var i = 0; i < resultados.length && i < 3; i++) { 
 							var producto = resultados[i]; 
-							var descripcion = producto.descripcion; 
+							var descripcion = producto.descripcion;
 							var descripcionAcortada = ""; 
 							for (var j = 0; j < 50 && j < descripcion.length; j++) { 
 								descripcionAcortada += descripcion[j]; 
@@ -32,7 +32,7 @@
 								<section class="product-box">
 									<a href="/product/<%= producto.id %>">
 										<figure class="product-box_image">
-											<img src="<%= producto.imagenProducto %>" alt="<%= producto.nombre %>">
+											<img src="/images/products/<%= producto.imagenProducto %>" alt="<%= producto.nombre %>">
 										</figure>
 										<article class="product-box_data">
 											<h2><%= producto.nombre %></h2>

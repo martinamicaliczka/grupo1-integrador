@@ -53,15 +53,24 @@ const userController = {
   },
 
   profile: function (req, res) {
-    const usuarioLogeado = usuarios.usuario;
-    const email = usuarios.email;
-    const foto = usuarios.fotoPerfil;
-    return res.render('profile', {
-      usuarioLogeado: usuarioLogeado,
-      email: email,
-      foto: foto,
-      productos: productos,
-      comentarios: comentarios
+    if (!req.session.usuarioLogeado) {
+      return res.redirect("/users/login");
+    }
+  
+    const idUsuario = req.session.usuarioLogeado.id;
+  
+    db.Usuario.findByPk(idUsuario, {
+      include: [{ association: 'productos' }]
+    })
+    .then(function(usuario) {
+      return res.render('profile', {
+        usuario: usuario,
+        productos: usuario.productos,
+        totalProductos: usuario.productos.length
+      });
+    })
+    .catch(function(error) {
+      return res.send(error);
     });
   },
 
