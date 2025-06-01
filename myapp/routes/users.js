@@ -5,7 +5,7 @@ const userController = require('../controllers/userController')
 /* GET users listing. */
 router.get('/login', userController.login);
 router.post('/login', userController.loginProcess);
-router.get('/logout', userController.logout);
+router.post('/logout', userController.logout);
 router.get('/register', userController.register);
 router.post('/register', userController.create);
 router.get('/profile', userController.profile);

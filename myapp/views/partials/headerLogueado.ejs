@@ -54,20 +54,32 @@
 					<li><a href="/users/profile">
 							<i class="fas fa-user">
 							</i>
-							<%= usuarioLogeado%>
+							<%= usuarioLogueado%>
 						</a>
 					</li>
 					<li>
 
 					</li>
-					<li>
-						<a href="/" class="logout" type="submit">Cerrar sesión <i class="fas fa-sign-in-alt"></i></a>
-						<!--<form action="/" method="post">
-							<button class="logout" type="submit">
-								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
-							</button>
-						</form>-->
+						<% if (usuarioLogueado) { %>
+						 <li>
+  						<form action="/users/logout" method="POST">
+  						  <button class="logout" type="submit">Cerrar sesión <i class="fas fa-sign-in-alt"></i>
+    					</button> </form>
+						</li>
+						<% } else { %>
+							<li>
+						<a href="./register.ejs">Creá tu cuenta <i class="far fa-address-card"></i>
+						</a>
 					</li>
+					<li>
+						<a href="./login.ejs">Ingresá <i class="fas fa-sign-in-alt"></i></a>
+					</li>
+
+						<% } %>
+						
+						 
+					
+
 					<!-- Solo deslogueado <li>
 						<a href="./register.ejs">Creá tu cuenta <i class="far fa-address-card"></i>
 						</a>

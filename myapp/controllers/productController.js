@@ -48,17 +48,39 @@ const productController = {
     });
   },
     agregarProductos: function(req,res){
-      const usuarioLogeado = usuarios.usuario;
-      return res.render('product-add', {usuarioLogeado: usuarioLogeado});
+      const usuarioLogueado = req.session.usuarioLogueado;
+      
+      return res.render('product-add', {usuarioLogueado: usuarioLogueado});
+      
+    },
+    guardarProductos: function(req, res){
+       if (!req.session.usuarioLogueado) {
+        return res.redirect("/users/login");
+      }
+      const nombre = req.body.nombreProducto;
+      const descripcion= req.body.descripcion;
+      const imagenProducto= req.body.image ;
+      const idUsuario = req.session.usuarioLogueado.id;
+
+      let newProduct = {nombre: nombre, descripcion: descripcion, imagenProducto: imagenProducto, idUsuario: idUsuario}
+
+        db.Producto.create(newProduct)
+        .then(function(){
+          return res.redirect("/");
+        })
+        .catch(function(error){
+          cosole.log(error)
+          return res.send("ocurrio un error al guardar el producto")
+        });
     },
     nuevoComentario:function (req, res) {
-      if (req.session.user == undefined) {
+      if (!req.session.usuarioLogueado) {
         return res.redirect("/users/login");
       }
       else {
         db.Comentario.create({
           idProducto: req.body.idProducto,
-          idUsuario: req.session.usuarioLogeado.id,
+          idUsuario: req.session.usuarioLogueado.id,
           comentario: req.body.comentario,
       })
       .then(function () {

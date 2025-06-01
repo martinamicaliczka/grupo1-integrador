@@ -5,7 +5,7 @@
 <%- include('./partials/head') %>
 
 <body>
-	<%- include('./partials/headerLogueado', {usuarioLogeado}) %>
+	<%- include('./partials/headerLogueado', {usuarioLogueado}) %>
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
@@ -15,10 +15,10 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> </h2>
-				<form action="/" method="get" class="formulario-registro">
+				<form action="/product/product-add" method="post" class="formulario-registro">
 					<div>
-						<label for="nombre-producto" class="product-label">Nombre del producto:</label>
-						<input type="text" name="nombre-producto" id="nombre-producto" class="form-input" required>
+						<label for="nombreProducto" class="product-label">Nombre del producto:</label>
+						<input type="text" name="nombreProducto" id="nombreProducto" class="form-input" required>
 					</div>
 					<div>
 						<label for="descripcion" class="product-label">Descripcion del producto:</label>

@@ -3,7 +3,7 @@ const bcryptjs = require("bcryptjs");
 
 const userController = {
     login: function (req, res) {
-        if (req.session.usuarioLogeado) {
+        if (req.session.usuarioLogueado) {
             return res.redirect('/users/profile');
         }
         return res.render('login', {msg: null});
@@ -19,7 +19,7 @@ const userController = {
                 if (!bcryptjs.compareSync(req.body.contrasenia, user.contrasenia)) {
                     return res.render('login', { msg: 'La contraseña es incorrect '});
                 }
-                req.session.usuarioLogeado = user;
+                req.session.usuarioLogueado = user;
 
                 if (req.body.recordame != undefined) {
                     res.cookie('recordame', user.email, { maxAge: 600000 }); // 10 min
@@ -36,18 +36,18 @@ const userController = {
 },
 
   register: function (req, res) {
-    if(req.session.usuarioLogeado){
+    if(req.session.usuarioLogueado){
         return res.redirect('/users/profile');
     }
     return res.render('register', {error:null});
   },
 
   profile: function (req, res) {
-    if (!req.session.usuarioLogeado) {
+    if (!req.session.usuarioLogueado) {
       return res.redirect("/users/login");
     }
   
-    const idUsuario = req.session.usuarioLogeado.id;
+    const idUsuario = req.session.usuarioLogueado.id;
   
     db.Usuario.findByPk(idUsuario, {
       include: [{ association: 'producto' }]
