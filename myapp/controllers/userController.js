@@ -57,7 +57,7 @@ const userController = {
         usuario: usuario,
         productos: usuario.producto,
         totalProductos: usuario.producto.length,
-        usuarioLogueado: usuario.username,
+        usuarioLogueado: req.session.usuarioLogueado,
         email: usuario.email,
         foto: usuario.foto
       });
