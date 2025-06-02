@@ -50,13 +50,17 @@ const userController = {
     const idUsuario = req.session.usuarioLogueado.id;
   
     db.Usuario.findByPk(idUsuario, {
-      include: [{ association: 'producto' }]
-    })
+        include: [
+            { association: 'producto' },
+            { association: 'comentario' }
+          ]
+        })
     .then(function(usuario) {
       return res.render('profile', {
         usuario: usuario,
         productos: usuario.producto,
         totalProductos: usuario.producto.length,
+        totalComentarios: usuario.comentario.length,
         usuarioLogueado: req.session.usuarioLogueado,
         email: usuario.email,
         foto: usuario.foto
@@ -123,7 +127,8 @@ const userController = {
         where: { username: userBuscado },
         include: [
           {association: 'producto',
-            include: ['comentarios']}]
+            include: ['comentarios']},
+            {association: 'comentario' }]
       })
       .then(function(usuario) {
         if (!usuario) {
@@ -133,6 +138,7 @@ const userController = {
           usuario: usuario,
           productos: usuario.producto,
           totalProductos: usuario.producto.length,
+          totalComentarios: usuario.comentario.length,
           usuarioLogueado: usuario.username,
           email: usuario.email,
           foto: usuario.foto
