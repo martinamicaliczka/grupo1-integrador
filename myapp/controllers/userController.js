@@ -22,7 +22,7 @@ const userController = {
                 req.session.usuarioLogueado = user;
 
                 if (req.body.recordame != undefined) {
-                    res.cookie('recordame', user.email, { maxAge: 600000 }); // 10 min
+                    res.cookie('recordame', user, { maxAge: 600000 }); // 10 min
                 }
 
             return res.redirect('/users/profile');
@@ -39,7 +39,7 @@ const userController = {
     if(req.session.usuarioLogueado){
         return res.redirect('/users/profile');
     }
-    return res.render('register', {error:null, usuarioLogueado: req.session.usuarioLogueado, nombreUsuario: usuario.username});
+    return res.render('register', {error:null, usuarioLogueado: req.session.usuarioLogueado});
   },
 
   profile: function (req, res) {
@@ -143,7 +143,7 @@ const userController = {
           usuarioLogueado: usuario.username,
           email: usuario.email,
           foto: usuario.foto,
-          nombreUsuario: usuario.username
+          usuarioLogueado: req.session.usuarioLogueado
         });
         }
         

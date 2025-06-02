@@ -15,7 +15,7 @@ const productController = {
         ]
       })
       .then(function (productos) {
-        return res.render("product", {productos: productos, idBuscado: idBuscado, usuarioLogueado: req.session.usuarioLogueado,nombreUsuario: usuario.username});
+        return res.render("product", {productos: productos, idBuscado: idBuscado, usuarioLogueado: req.session.usuarioLogueado});
       })
       .catch(function (error) {
         return res.send(error);
@@ -33,7 +33,8 @@ const productController = {
         ]
       },
       include: ['comentarios', 'usuario']
-    }).then(function(resultados) {
+    })
+    .then(function(resultados) {
       let respuesta = null;
       if (resultados.length === 0) {
         respuesta = "No hay resultados para su criterio de búsqueda";
@@ -41,9 +42,9 @@ const productController = {
       return res.render('search-results', {
         resultados: resultados,
         respuesta: respuesta,
-        buscado: req.query.buscado,
+        buscado: req.query.search,
         usuarioLogueado: req.session.usuarioLogueado,
-        nombreUsuario: usuario.username
+        
       });
     }).catch(function(error) {
       return res.send(error);
@@ -51,8 +52,9 @@ const productController = {
   },
     agregarProductos: function(req,res){
       const usuarioLogueado = req.session.usuarioLogueado;
-      
-      return res.render('product-add', {usuarioLogueado: usuarioLogueado, nombreUsuario: usuario.username});
+      if(!usuarioLogueado){
+        return res.redirect('/users/profile')}
+      return res.render('product-add', {usuarioLogueado: usuarioLogueado});
       
     },
     guardarProductos: function(req, res){

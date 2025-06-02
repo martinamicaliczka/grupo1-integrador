@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product');
 const session = require('express-session');
+const { log } = require('console');
 
 
 
@@ -33,6 +34,16 @@ app.use(function(req,res,next){
   }
 
   return next();
+})
+
+app.use(function(req, res, next){
+if(req.session.user == undefined && req.cookies.recordarme !== undefined){
+  req.session.user = req.cookies.recordarme
+  res.locals.user = req.session.user;
+  console.log("=====Aleeeeee ===============", req.session.user);
+}
+
+return next();
 })
 
 app.use('/', indexRouter);
