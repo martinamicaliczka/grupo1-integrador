@@ -15,7 +15,12 @@
 	<link rel="stylesheet" href="/stylesheets/app.css">
 </head>
 <body>
-	<%- include('./partials/header') %>
+	<% if (usuarioLogueado) { %>
+		<%- include('./partials/headerLogueado', {usuarioLogueado}) %>
+	 <% } else { %>
+	  <%- include('./partials/header') %>
+	<% } %>
+		
 	<% for (let i = 0; i < productos.length; i++) { 
 		let producto = productos[i]; 
 		let descripcion = producto.descripcion;

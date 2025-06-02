@@ -4,7 +4,11 @@
 <%- include('./partials/head') %>
 
 <body>
-	<%- include('./partials/headerLogueado', {usuarioLogueado}) %>
+		<% if (usuarioLogueado) { %>
+		<%- include('./partials/headerLogueado', {usuarioLogueado}) %>
+	 <% } else { %>
+	  <%- include('./partials/header') %>
+	<% } %>
 
 	<!-- Datos del usuario -->
 	<section class="info-usuario container products-wrapper">
@@ -14,7 +18,7 @@
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title"><%= usuarioLogueado %>
+					<h1 class="main-title"><%= usuario.username %>
 						<a href="/">
 							<i class="fas fa-cog"></i>
 						</a>

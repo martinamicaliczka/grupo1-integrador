@@ -9,7 +9,7 @@ const indexController = {
            { association: "comentarios" }]
        })
        .then(function(productos) {
-         return res.render('index', {productos: productos});
+         return res.render('index', {productos: productos, usuarioLogueado: req.session.usuarioLogueado});
        }).catch(function(err) {
          return res.send(err)
       })

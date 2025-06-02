@@ -15,7 +15,7 @@ const productController = {
         ]
       })
       .then(function (productos) {
-        return res.render("product", {productos: productos, idBuscado: idBuscado});
+        return res.render("product", {productos: productos, idBuscado: idBuscado, usuarioLogueado: req.session.usuarioLogueado,nombreUsuario: usuario.username});
       })
       .catch(function (error) {
         return res.send(error);
@@ -41,7 +41,9 @@ const productController = {
       return res.render('search-results', {
         resultados: resultados,
         respuesta: respuesta,
-        buscado: req.query.buscado
+        buscado: req.query.buscado,
+        usuarioLogueado: req.session.usuarioLogueado,
+        nombreUsuario: usuario.username
       });
     }).catch(function(error) {
       return res.send(error);
@@ -50,7 +52,7 @@ const productController = {
     agregarProductos: function(req,res){
       const usuarioLogueado = req.session.usuarioLogueado;
       
-      return res.render('product-add', {usuarioLogueado: usuarioLogueado});
+      return res.render('product-add', {usuarioLogueado: usuarioLogueado, nombreUsuario: usuario.username});
       
     },
     guardarProductos: function(req, res){

@@ -6,7 +6,7 @@ const userController = {
         if (req.session.usuarioLogueado) {
             return res.redirect('/users/profile');
         }
-        return res.render('login', {msg: null});
+        return res.render('login', {msg: null,  usuarioLogueado: req.session.usuarioLogueado});
         },
         
         loginProcess: function (req, res) {
@@ -39,7 +39,7 @@ const userController = {
     if(req.session.usuarioLogueado){
         return res.redirect('/users/profile');
     }
-    return res.render('register', {error:null});
+    return res.render('register', {error:null, usuarioLogueado: req.session.usuarioLogueado, nombreUsuario: usuario.username});
   },
 
   profile: function (req, res) {
@@ -63,7 +63,8 @@ const userController = {
         totalComentarios: usuario.comentario.length,
         usuarioLogueado: req.session.usuarioLogueado,
         email: usuario.email,
-        foto: usuario.foto
+        foto: usuario.foto,
+        nombreUsuario: usuario.username
       });
     })
     .catch(function(error) {
@@ -72,7 +73,7 @@ const userController = {
   },
 
   edit: function (req, res) {
-    return res.render('profile-edit');
+    return res.render('profile-edit', { usuarioLogueado: req.session.usuarioLogueado});
   },
 
   create: function (req, res) {
@@ -141,7 +142,8 @@ const userController = {
           totalComentarios: usuario.comentario.length,
           usuarioLogueado: usuario.username,
           email: usuario.email,
-          foto: usuario.foto
+          foto: usuario.foto,
+          nombreUsuario: usuario.username
         });
         }
         
